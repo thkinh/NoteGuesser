@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Guess the SheetNote</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<h1>Guess the SheetNote</h1>
+
+		<!-- Display the note arithmetic -->
+		<div class="horizontal-layout">
+			<span id="note-arithmetic" style="font-size: 1.5em; font-weight: bold;">Fa + 1.5</span>
+		</div>
+
+		<!-- Sharp and Flat Checkboxes -->
+		<div>
+			<label><input type="checkbox" id="sharp-checkbox" class="note-checkbox"> Sharp (#)</label>
+			<label><input type="checkbox" id="flat-checkbox" class="note-checkbox"> Flat (b)</label>
+		</div>
+
+		<div>
+			<img id = "note-image" src="Image/null.png">  
+		</div>
+
+		<!-- Options for choosing the note -->
+		<div class="list-choice">
+			<div class="list-choice-title">Note</div>
+			<div class="list-choice-objects">
+				<label>
+					<input type="radio" name="note"/><span>Do</span>
+				</label>
+				<label>
+					<input type="radio" name="note"/><span>Re</span>
+				</label>
+				<label>
+					<input type="radio" name="note"/><span>Mi</span>
+				</label>
+				<label>
+					<input type="radio" name="note"/><span>Fa</span>
+				</label>
+				<label>
+					<input type="radio" name="note"/><span>Son</span>
+				</label>
+				<label>
+					<input type="radio" name="note"/><span>La</span>
+				</label>
+				<label>
+					<input type="radio" name="note"/><span>Si</span>
+				</label> 
+			</div>
+		</div>
+
+		<!-- Confirm the guess -->
+		<div>
+			<button id="confirm-button">Confirm Guess</button>
+		</div>
+
+		<div>
+			<button id = "generate-button">Generate Quiz</button>
+		</div>
+
+		<!-- Display the result -->
+		<div class="horizontal-layout">
+			<span id="result-message" style="font-size: 1.2em; color: green;"></span>
+			
+			<span id="winStreak-message" style="font-size: 1.2em; color: cyan;"></span>
+		</div>
+
+		<!-- Footer -->
+		<footer>
+			<p>© 2025 Thinh dep trai| Developed with ❤️</p>
+		</footer>
+		<script src="script.js"></script>
+	</body>
+</html>
+
