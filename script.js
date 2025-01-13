@@ -7,13 +7,73 @@ const flatCheck = document.getElementById('flat-checkbox');
 const generateButton = document.getElementById('generate-button');
 const imgElement = document.getElementById('note-image');
 const quizElement = document.getElementById('note-arithmetic');
+const isGuitarElement = document.getElementById('guitar-checkbox') ;
+const isPianoElement = document.getElementById('piano-checkbox');
+const header = document.getElementById('header1');
 let isSharp = false;
 let isFlat = false;
+let isGuitar = false;
+let isPiano = true;
 const noteArray = ['Do', 'Re', 'Mi', 'Fa', 'Son', 'La', 'Si'];
 const possibleOffSet = [-2, -1.5, -1, -0.5, 0.5, 1, 1.5, 2];
-
 let Answer = noteArray[0];
 let winStreak = 0;
+
+function Init(){
+	isGuitarElement.checked=false;
+	isPianoElement.checked=true;
+	sharpCheck.checked=false;
+	flatCheck.checked=false;
+}
+document.addEventListener("DOMContentLoaded", () => {
+		Init();
+});
+
+// Function to handle checkbox changes
+function handlePianoCheck() {
+	// Check if 'sharp' is selected
+	if (isPianoElement.checked) {
+		isPiano = true;
+
+		if(isGuitar == true){
+			isGuitar = false;
+			isGuitarElement.checked = false;
+		}
+
+		header.textContent = "Guess the piano note";
+	}
+	else {
+		header.textContent = "Guess the sheet note";
+		isPiano = false;
+	}
+	// Log the current state (optional, for debugging)
+	console.log(`Is Piano  = ${isPiano}`);
+}
+
+
+
+// Function to handle checkbox changes
+function handleGuitarCheck() {
+	// Check if 'sharp' is selected
+	if (isGuitarElement.checked) {
+		isGuitar = true;
+
+		if(isPiano == true){
+			isPiano = false;
+			isPianoElement.checked = false;
+		}
+
+		header.textContent = "Guess the guitar note";
+	}
+	else {
+		header.textContent = "Guess the sheet note";
+		isGuitar = false;
+	}
+	// Log the current state (optional, for debugging)
+	console.log(`Is Guitar  = ${isGuitar}`);
+}
+
+
 
 function handleGenerate(){
 	let seedNote = Math.floor(Math.random() * 7);
@@ -29,7 +89,13 @@ function handleGenerate(){
 }
 
 function loadImage(){
-	try{
+	try
+	{
+		if(isPiano){
+			imgElement.src = `Image/piano/${Answer}.png`;
+			return;
+		}
+
 		imgElement.src = `Image/${Answer}.png`;	
 	}
 	catch(err) {
@@ -74,6 +140,8 @@ function handleFlatCheck(){
 // Add event listeners to both checkboxes
 sharpCheck.addEventListener('change', handleSharpCheck);
 flatCheck.addEventListener('change', handleFlatCheck);
+isGuitarElement.addEventListener('change', handleGuitarCheck);
+isPianoElement.addEventListener(`change`, handlePianoCheck);
 
 generateButton.addEventListener("click", ()=> {
 	handleGenerate();

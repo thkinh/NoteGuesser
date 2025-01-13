@@ -7,13 +7,19 @@
 		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
-		<h1>Guess the SheetNote</h1>
+		<h1 id = "header1" >Guess the SheetNote</h1>
+	
+		<div>
+			<label><input type="checkbox" id="guitar-checkbox" class="note-checkbox"> for Guitar</label>
+			<label><input type="checkbox" id="piano-checkbox" class="note-checkbox"> for Piano</label>
+			
+		</div>
 
 		<!-- Display the note arithmetic -->
 		<div class="horizontal-layout">
-			<span id="note-arithmetic" style="font-size: 1.5em; font-weight: bold;">Fa + 1.5</span>
+			<span id="note-arithmetic" style="font-size: 1.5em; font-weight: bold;">Note arithmetic</span>
 		</div>
-
+	
 		<!-- Sharp and Flat Checkboxes -->
 		<div>
 			<label><input type="checkbox" id="sharp-checkbox" class="note-checkbox"> Sharp (#)</label>
