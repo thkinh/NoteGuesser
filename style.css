@@ -1,13 +1,16 @@
-
 body {
     font-family: Arial, sans-serif;
-    margin: 0px;
-    height: 100em;
+    margin: 0;
+    height: 100em; /* Ensure the body takes up the full viewport height */
     width: 100%;
     text-align: center;
-    background: linear-gradient(60deg,#7d0505,  #130329); /* Dark blue gradient */
-    color: #FCC737 /* Ensure text is visible on the dark background */	
+    background: linear-gradient(60deg, #7d0505, #130329); /* Dark blue gradient */
+    background-repeat: no-repeat; /* Prevent background from repeating */
+    background-size: cover; /* Ensure the background covers the entire viewport */
+    background-attachment: fixed; /* Optional: Keeps background fixed during scrolling */
+    color: #FCC737; /* Ensure text is visible on the dark background */
 }
+
 
 .horizontal-layout {
     display: flex;
@@ -128,10 +131,11 @@ footer {
     max-height: 540px;
 }
 
-#note-image{
-    max-width: 430px;
-    max-height: 200px;
-    object-fit: cover;
-    border: 2px solid #ccc;
-    border-radius: 5px;
+#note-image {                                                                                         
+    max-width: 100%; /* Ensure the image doesn't exceed the container or viewport width */                 
+    height: auto; /* Maintain the aspect ratio */                                                             
+    object-fit: cover;                                                                                
+    border: 2px solid #ccc;                                                                          
+    border-radius: 5px;                                                                              
 }
+
