@@ -1,0 +1,7 @@
+version: "3.8"
+
+services:
+  game_noteguesser:
+    image: noteguesser
+    ports:
+      - "9000:80"
